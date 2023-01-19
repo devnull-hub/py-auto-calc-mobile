@@ -6,10 +6,10 @@ import time
 
 # Parameters
 DEVICE_NAME = "My Phone"
-PLATFORM_VERSION = "11"
-APP_PACK = "com.google.android.calculator"
+PLATFORM_VERSION = "8.1.0"
+APP_PACK = "com.android.calculator2"
 APP_ACT = "com.android.calculator2.Calculator"
-UID = "emulator-5554" 
+UID = "192.XXX.XXX.XXX:5555" 
 
 
 # Desired Capabilities
@@ -30,15 +30,15 @@ driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", desired_cap)
 
 # Test case to test addition operation
 def test_add_operation():     
-    driver.find_element(AppiumBy.ID, "com.google.android.calculator:id/digit_2").click()
+    driver.find_element(AppiumBy.ID, "com.android.calculator2:id/digit_2").click()
     print("Pressing 2")
-    driver.find_element(AppiumBy.ID, "com.google.android.calculator:id/op_add").click()
+    driver.find_element(AppiumBy.ID, "com.android.calculator2:id/op_add").click()
     print("Pressing Plus")
-    driver.find_element(AppiumBy.ID, "com.google.android.calculator:id/digit_4").click()
+    driver.find_element(AppiumBy.ID, "com.android.calculator2:id/digit_4").click()
     print("Pressing 4")
-    driver.find_element(AppiumBy.ID, "com.google.android.calculator:id/eq").click()
+    driver.find_element(AppiumBy.ID, "com.android.calculator2:id/eq").click()
     print("Pressing Equal")
-    result = driver.find_element(AppiumBy.ID, "com.google.android.calculator:id/result_final").text
+    result = driver.find_element(AppiumBy.ID, "com.android.calculator2:id/result").text
     print("Result", result)    
     
 def tearDown():
